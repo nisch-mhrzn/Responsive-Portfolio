@@ -110,9 +110,12 @@ const activePortfolio = () => {
   });
   portfolioDetails[index].classList.add("active");
 };
+document.querySelectorAll('a[target="_blank"]').forEach(link => {
+  link.setAttribute('rel', 'noopener noreferrer');
+});
 
 arrowRight.addEventListener("click", () => {
-  if (index < 6) {
+  if (index < 5) {
     index++;
     arrowLeft.classList.remove("disabled");
   } else {
