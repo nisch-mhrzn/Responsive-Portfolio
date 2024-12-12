@@ -51,7 +51,7 @@ Ensure you have a basic web server to run the project locally or use your prefer
 4. Access the site in your browser at `http://localhost:5173`.
 
 ---
-
+https://github.com/user-attachments/assets/2c092836-0162-4929-9c94-88e5b5a0f2b0
 ## **File Structure**
 ```
 - **`index.html`**: Main HTML file.
