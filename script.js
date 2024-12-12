@@ -1,6 +1,33 @@
 const navLinks = document.querySelectorAll("header nav a");
 const logoLinks = document.querySelector(".logo");
+const menuIcon = document.querySelector("#menu-icon");
+const navbar = document.querySelector("header nav");
 const sections = document.querySelectorAll("section");
+menuIcon.addEventListener("click",() => {
+  menuIcon.classList.toggle("bx-x");
+  navbar.classList.toggle("active");
+});
+document.getElementById("download-cv").addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent default anchor behavior
+
+  // Create download links for two files
+  const cv1 = document.createElement("a");
+  cv1.href = "Nischal-Maharjan-Resume.pdf"; // Replace with your actual file path
+  cv1.download = "Python_cv.pdf"; // The name for the downloaded file
+  cv1.style.display = "none";
+  document.body.appendChild(cv1);
+  cv1.click();
+  document.body.removeChild(cv1);
+
+  const cv2 = document.createElement("a");
+  cv2.href = "Nischal-Maharjan-Frontend.pdf"; // Replace with your actual file path
+  cv2.download = "React_cv.pdf"; // The name for the downloaded file
+  cv2.style.display = "none";
+  document.body.appendChild(cv2);
+  cv2.click();
+  document.body.removeChild(cv2);
+});
+
 const activePage = () => {
   const header = document.querySelector("header");
   const barsBox = document.querySelector(".bars-box");
@@ -19,6 +46,8 @@ const activePage = () => {
     section.classList.remove('active');
   
   })
+  menuIcon.classList.remove("bx-x");
+  navbar.classList.remove("active");
 };
 navLinks.forEach((link, idx) => {
   link.addEventListener("click", () => {
